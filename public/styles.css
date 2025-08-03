@@ -1,0 +1,335 @@
+/* Ottawa Senators Daily - Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 2px solid #C8102E;
+    margin-bottom: 40px;
+}
+
+.logo-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #C8102E;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    color: #CEB888;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.date-section {
+    text-align: right;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.day-counter {
+    color: #CEB888;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Featured Player Section */
+.featured-player {
+    margin-bottom: 50px;
+}
+
+.player-card {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #333;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.player-header h2 {
+    font-size: 2rem;
+    color: #C8102E;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.player-basic-info {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.player-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid #C8102E;
+    background: #333;
+}
+
+.player-details {
+    flex: 1;
+}
+
+.player-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.player-position {
+    font-size: 1.3rem;
+    color: #CEB888;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.player-physical {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+.player-birthplace {
+    font-size: 1.1rem;
+    color: #cccccc;
+}
+
+.player-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.player-bio h4 {
+    font-size: 1.5rem;
+    color: #C8102E;
+    margin-bottom: 15px;
+}
+
+.player-bio p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.draft-info {
+    color: #CEB888 !important;
+    font-style: italic;
+}
+
+/* Stats Section */
+.player-stats h4 {
+    font-size: 1.5rem;
+    color: #C8102E;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    background: rgba(200, 16, 46, 0.1);
+    border: 1px solid rgba(200, 16, 46, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(200, 16, 46, 0.2);
+    transform: translateY(-2px);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.stat-value.positive {
+    color: #4CAF50;
+}
+
+.stat-value.negative {
+    color: #f44336;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #CEB888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* News Section */
+.news-section {
+    margin-bottom: 50px;
+}
+
+.news-section h3 {
+    font-size: 2rem;
+    color: #C8102E;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.news-item {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(200, 16, 46, 0.2);
+    border-color: #C8102E;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.news-summary {
+    color: #cccccc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.news-source {
+    color: #C8102E;
+    font-weight: 600;
+}
+
+.news-date {
+    color: #CEB888;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #333;
+    color: #cccccc;
+}
+
+.api-links {
+    margin-top: 15px;
+}
+
+.api-links a {
+    color: #CEB888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.api-links a:hover {
+    color: #C8102E;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .logo-section h1 {
+        font-size: 2rem;
+    }
+    
+    .player-basic-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .player-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .player-name {
+        font-size: 1.8rem;
+    }
+}

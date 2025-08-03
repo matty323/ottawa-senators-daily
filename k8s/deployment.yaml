@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sensdle-app
+  namespace: sensdle
+  labels:
+    app: sensdle-app
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sensdle-app
+  template:
+    metadata:
+      labels:
+        app: sensdle-app
+        version: v1
+    spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      containers:
+      - name: sensdle
+        image: sensdle:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3333
+          name: http
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: PORT
+          value: "3333"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /api/players
+            port: 3333
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /api/players
+            port: 3333
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        fsGroup: 1001

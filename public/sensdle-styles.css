@@ -1,0 +1,602 @@
+/* SENSDLE - Ottawa Senators Guessing Game Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 3px solid #C8102E;
+    margin-bottom: 30px;
+}
+
+.logo-section h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #C8102E;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    color: #CEB888;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.game-info {
+    text-align: right;
+}
+
+.date {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.stats {
+    color: #CEB888;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Game Status */
+.game-status {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.status-message {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.status-message.active {
+    background: rgba(206, 184, 136, 0.2);
+    border: 2px solid #CEB888;
+    color: #CEB888;
+}
+
+.status-message.win {
+    background: rgba(76, 175, 80, 0.2);
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+}
+
+.status-message.lose {
+    background: rgba(244, 67, 54, 0.2);
+    border: 2px solid #f44336;
+    color: #f44336;
+}
+
+/* Clues Section */
+.clues-section {
+    margin-bottom: 40px;
+}
+
+.clues-section h3 {
+    font-size: 1.8rem;
+    color: #C8102E;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.clues-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.clue-item {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.clue-item:hover:not(.locked) {
+    border-color: #C8102E;
+    transform: translateX(5px);
+}
+
+.clue-item.locked {
+    opacity: 0.5;
+    background: rgba(30, 30, 30, 0.5);
+}
+
+.clue-number {
+    background: #C8102E;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.clue-item.locked .clue-number {
+    background: #666;
+}
+
+.clue-text {
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+/* Guessing Section */
+.guess-section {
+    margin-bottom: 40px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#player-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background: #1e1e1e;
+    color: white;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+#player-input:focus {
+    outline: none;
+    border-color: #C8102E;
+}
+
+#player-input::placeholder {
+    color: #888;
+}
+
+#guess-btn {
+    background: #C8102E;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#guess-btn:hover {
+    background: #a00d26;
+    transform: translateY(-2px);
+}
+
+.hint-btn {
+    background: #CEB888;
+    color: #000;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hint-btn:hover {
+    background: #b8a478;
+    transform: translateY(-2px);
+}
+
+/* Attempts Section */
+.attempts-section {
+    margin-bottom: 40px;
+}
+
+.attempts-section h3 {
+    font-size: 1.8rem;
+    color: #C8102E;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.attempts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attempt-item {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.attempt-item.correct {
+    border: 2px solid #4CAF50;
+    background: linear-gradient(145deg, #1e3e1e, #2a4a2a);
+}
+
+.attempt-item.incorrect {
+    border: 2px solid #f44336;
+    background: linear-gradient(145deg, #3e1e1e, #4a2a2a);
+}
+
+.attempt-number {
+    background: #333;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.attempt-item.correct .attempt-number {
+    background: #4CAF50;
+}
+
+.attempt-item.incorrect .attempt-number {
+    background: #f44336;
+}
+
+.attempt-name {
+    flex: 1;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.attempt-result {
+    font-size: 1.5rem;
+}
+
+/* Hint Section */
+.hint-section {
+    margin-bottom: 40px;
+}
+
+.hint-section h3 {
+    font-size: 1.8rem;
+    color: #C8102E;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hint-container h4 {
+    color: #CEB888;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.hint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.hint-item {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.hint-item.correct {
+    border-color: #4CAF50;
+    background: linear-gradient(145deg, #1e3e1e, #2a4a2a);
+}
+
+.hint-item.close {
+    border-color: #FFC107;
+    background: linear-gradient(145deg, #3e3e1e, #4a4a2a);
+}
+
+.hint-item.incorrect {
+    border-color: #f44336;
+    background: linear-gradient(145deg, #3e1e1e, #4a2a2a);
+}
+
+.hint-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #CEB888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hint-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.hint-status {
+    font-size: 1.5rem;
+}
+
+/* Answer Section */
+.answer-section {
+    margin-bottom: 40px;
+}
+
+.answer-section h3 {
+    font-size: 1.8rem;
+    color: #C8102E;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.answer-card {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border: 2px solid #C8102E;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.answer-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #CEB888;
+}
+
+.answer-details h4 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.answer-details p {
+    color: #CEB888;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.career-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.career-stats span {
+    background: rgba(200, 16, 46, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #333;
+    color: #cccccc;
+}
+
+.footer-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.link-btn {
+    background: none;
+    border: 1px solid #CEB888;
+    color: #CEB888;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.link-btn:hover {
+    background: #CEB888;
+    color: #000;
+}
+
+.link-btn.debug {
+    border-color: #f44336;
+    color: #f44336;
+}
+
+.link-btn.debug:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid #C8102E;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.close:hover {
+    color: #C8102E;
+}
+
+.rules-content h2 {
+    color: #C8102E;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rules-content h3 {
+    color: #CEB888;
+    margin: 20px 0 10px 0;
+}
+
+.rules-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.rules-content li {
+    margin-bottom: 8px;
+    color: #cccccc;
+}
+
+.hint-correct {
+    background: #4CAF50;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+}
+
+.hint-close {
+    background: #FFC107;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: black;
+    font-weight: 600;
+}
+
+.hint-incorrect {
+    background: #f44336;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .logo-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .input-container {
+        flex-direction: column;
+    }
+    
+    .hint-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .answer-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .career-stats {
+        justify-content: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-section h1 {
+        font-size: 2rem;
+    }
+    
+    .status-message {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+    }
+    
+    .clues-section h3,
+    .attempts-section h3,
+    .hint-section h3,
+    .answer-section h3 {
+        font-size: 1.5rem;
+    }
+}

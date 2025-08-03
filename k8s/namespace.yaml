@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sensdle
+  labels:
+    name: sensdle
+    app: sensdle-game

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏒 SENSDLE - Ottawa Senators Guessing Game</title>
+    <link rel="stylesheet" href="/sensdle-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <h1>🏒 SENSDLE</h1>
+                <p class="tagline">Guess the Ottawa Senators player!</p>
+            </div>
+            <div class="game-info">
+                <div class="date"><%= date %></div>
+                <div class="stats">
+                    <span>Attempts: <span id="attempts-count"><%= gameState.attempts.length %></span>/6</span>
+                    <span>Players: <%= totalPlayers %></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Status -->
+        <div class="game-status" id="game-status">
+            <% if (gameState.gameWon) { %>
+                <div class="status-message win">🎉 You won! Great job!</div>
+            <% } else if (gameState.gameOver) { %>
+                <div class="status-message lose">😔 Game Over! Better luck tomorrow!</div>
+            <% } else { %>
+                <div class="status-message active">🤔 Who am I?</div>
+            <% } %>
+        </div>
+
+        <!-- Clues Section -->
+        <section class="clues-section">
+            <h3>🔍 Clues</h3>
+            <div class="clues-container">
+                <% clues.forEach((clue, index) => { %>
+                    <div class="clue-item" data-clue="<%= index + 1 %>">
+                        <span class="clue-number"><%= index + 1 %></span>
+                        <span class="clue-text"><%= clue %></span>
+                    </div>
+                <% }) %>
+                
+                <% if (!gameState.gameOver && gameState.currentClue < gameState.targetPlayer.clues.length - 1) { %>
+                    <div class="clue-item locked" id="next-clue">
+                        <span class="clue-number"><%= gameState.currentClue + 2 %></span>
+                        <span class="clue-text">🔒 Make a guess to unlock the next clue</span>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+
+        <!-- Guessing Section -->
+        <section class="guess-section" id="guess-section">
+            <% if (!gameState.gameOver) { %>
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="player-input" 
+                        placeholder="Enter player name..."
+                        autocomplete="off"
+                        list="players-list"
+                    >
+                    <button id="guess-btn" onclick="makeGuess()">Guess</button>
+                    <button id="hint-btn" onclick="getHint()" class="hint-btn">💡 Hint</button>
+                </div>
+                
+                <datalist id="players-list">
+                    <% playerNames.forEach(name => { %>
+                        <option value="<%= name %>">
+                    <% }) %>
+                </datalist>
+            <% } %>
+        </section>
+
+        <!-- Attempts Section -->
+        <section class="attempts-section">
+            <h3>📝 Your Guesses</h3>
+            <div class="attempts-container" id="attempts-container">
+                <% gameState.attempts.forEach((attempt, index) => { %>
+                    <div class="attempt-item <%= attempt.correct ? 'correct' : 'incorrect' %>">
+                        <span class="attempt-number"><%= index + 1 %></span>
+                        <span class="attempt-name"><%= attempt.player.name %></span>
+                        <span class="attempt-result">
+                            <%= attempt.correct ? '✅' : '❌' %>
+                        </span>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+
+        <!-- Hint Section -->
+        <section class="hint-section" id="hint-section" style="display: none;">
+            <h3>💡 Comparison Hints</h3>
+            <div class="hint-container" id="hint-container">
+                <!-- Hints will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Answer Section (shown when game is over) -->
+        <% if (gameState.gameOver) { %>
+            <section class="answer-section">
+                <h3>🎯 The Answer</h3>
+                <div class="answer-card">
+                    <img src="<%= gameState.targetPlayer.photo %>" alt="<%= gameState.targetPlayer.name %>" class="answer-photo" onerror="this.style.display='none'">
+                    <div class="answer-details">
+                        <h4>#<%= gameState.targetPlayer.number %> <%= gameState.targetPlayer.name %></h4>
+                        <p><%= gameState.targetPlayer.position %> • <%= gameState.targetPlayer.yearsActive %></p>
+                        <p>📍 <%= gameState.targetPlayer.birthplace %></p>
+                        <p><%= gameState.targetPlayer.draftInfo %></p>
+                        <div class="career-stats">
+                            <span><%= gameState.targetPlayer.career.games %> GP</span>
+                            <span><%= gameState.targetPlayer.career.goals %> G</span>
+                            <span><%= gameState.targetPlayer.career.assists %> A</span>
+                            <span><%= gameState.targetPlayer.career.points %> P</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <% } %>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🏒 A new Sensdle puzzle every day! Come back tomorrow for another mystery Senator.</p>
+            <div class="footer-links">
+                <button onclick="showRules()" class="link-btn">How to Play</button>
+                <button onclick="resetGame()" class="link-btn">Reset Game</button>
+                <% if (process.env.NODE_ENV === 'development') { %>
+                    <button onclick="showAnswer()" class="link-btn debug">Show Answer</button>
+                <% } %>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeRules()">&times;</span>
+            <h2>🏒 How to Play Sensdle</h2>
+            <div class="rules-content">
+                <p><strong>Objective:</strong> Guess the mystery Ottawa Senators player using the clues provided!</p>
+                
+                <h3>🎯 Rules:</h3>
+                <ul>
+                    <li>You have <strong>6 attempts</strong> to guess the correct player</li>
+                    <li>Start with the first clue and make your guess</li>
+                    <li>Each wrong guess reveals a new clue</li>
+                    <li>Use the hint button (💡) to compare your guess with the target</li>
+                    <li>The game includes current and historical Senators players</li>
+                </ul>
+
+                <h3>💡 Hint System:</h3>
+                <ul>
+                    <li><span class="hint-correct">Green</span>: Exact match</li>
+                    <li><span class="hint-close">Yellow</span>: Close (birth year within 2 years)</li>
+                    <li><span class="hint-incorrect">Red</span>: No match</li>
+                </ul>
+
+                <p><strong>Good luck, and Go Sens Go!</strong> 🏒</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let gameOver = <%= gameState.gameOver ? 'true' : 'false' %>;
+        let gameWon = <%= gameState.gameWon ? 'true' : 'false' %>;
+        
+        // Enter key to submit guess
+        document.getElementById('player-input')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                makeGuess();
+            }
+        });
+        
+        async function makeGuess() {
+            if (gameOver) return;
+            
+            const input = document.getElementById('player-input');
+            const playerName = input.value.trim();
+            
+            if (!playerName) {
+                alert('Please enter a player name!');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/guess', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ playerName })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Add attempt to UI
+                    addAttemptToUI(playerName, result.correct);
+                    
+                    // Update attempts counter
+                    const attemptsCount = document.querySelectorAll('.attempt-item').length;
+                    document.getElementById('attempts-count').textContent = attemptsCount;
+                    
+                    if (result.correct) {
+                        // Won the game!
+                        gameOver = true;
+                        gameWon = true;
+                        document.getElementById('game-status').innerHTML = 
+                            '<div class="status-message win">🎉 You won! Great job!</div>';
+                        document.getElementById('guess-section').style.display = 'none';
+                        setTimeout(() => location.reload(), 2000);
+                    } else if (result.gameOver) {
+                        // Lost the game
+                        gameOver = true;
+                        document.getElementById('game-status').innerHTML = 
+                            '<div class="status-message lose">😔 Game Over! Better luck tomorrow!</div>';
+                        document.getElementById('guess-section').style.display = 'none';
+                        setTimeout(() => location.reload(), 2000);
+                    } else if (result.newClue) {
+                        // Add new clue
+                        addNewClue(result.newClue);
+                    }
+                    
+                    // Clear input
+                    input.value = '';
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error('Error making guess:', error);
+                alert('Error making guess. Please try again.');
+            }
+        }
+        
+        function addAttemptToUI(playerName, correct) {
+            const container = document.getElementById('attempts-container');
+            const attemptDiv = document.createElement('div');
+            attemptDiv.className = `attempt-item ${correct ? 'correct' : 'incorrect'}`;
+            
+            const attemptNumber = document.querySelectorAll('.attempt-item').length + 1;
+            attemptDiv.innerHTML = `
+                <span class="attempt-number">${attemptNumber}</span>
+                <span class="attempt-name">${playerName}</span>
+                <span class="attempt-result">${correct ? '✅' : '❌'}</span>
+            `;
+            
+            container.appendChild(attemptDiv);
+        }
+        
+        function addNewClue(clue) {
+            const cluesContainer = document.querySelector('.clues-container');
+            const clueNumber = document.querySelectorAll('.clue-item:not(.locked)').length + 1;
+            
+            // Remove the locked clue if it exists
+            const lockedClue = document.getElementById('next-clue');
+            if (lockedClue) {
+                lockedClue.remove();
+            }
+            
+            // Add the new clue
+            const clueDiv = document.createElement('div');
+            clueDiv.className = 'clue-item';
+            clueDiv.innerHTML = `
+                <span class="clue-number">${clueNumber}</span>
+                <span class="clue-text">${clue}</span>
+            `;
+            
+            cluesContainer.appendChild(clueDiv);
+            
+            // Add animation
+            clueDiv.style.opacity = '0';
+            clueDiv.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                clueDiv.style.transition = 'all 0.5s ease';
+                clueDiv.style.opacity = '1';
+                clueDiv.style.transform = 'translateY(0)';
+            }, 100);
+        }
+        
+        async function getHint() {
+            const input = document.getElementById('player-input');
+            const playerName = input.value.trim();
+            
+            if (!playerName) {
+                alert('Enter a player name first to get a hint!');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/hint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ playerName })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showHints(result.hints, playerName);
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error('Error getting hint:', error);
+                alert('Error getting hint. Please try again.');
+            }
+        }
+        
+        function showHints(hints, playerName) {
+            const hintSection = document.getElementById('hint-section');
+            const hintContainer = document.getElementById('hint-container');
+            
+            hintContainer.innerHTML = `
+                <h4>Comparing "${playerName}" to the mystery player:</h4>
+                <div class="hint-grid">
+                    <div class="hint-item ${hints.position.match}">
+                        <span class="hint-label">Position</span>
+                        <span class="hint-value">${hints.position.value}</span>
+                        <span class="hint-status">${hints.position.match === 'correct' ? '✅' : '❌'}</span>
+                    </div>
+                    <div class="hint-item ${hints.birthYear.match}">
+                        <span class="hint-label">Birth Year</span>
+                        <span class="hint-value">${hints.birthYear.value}</span>
+                        <span class="hint-status">${hints.birthYear.match === 'correct' ? '✅' : hints.birthYear.match === 'close' ? '🟡' : '❌'}</span>
+                    </div>
+                    <div class="hint-item ${hints.teams.match}">
+                        <span class="hint-label">Played for Sens</span>
+                        <span class="hint-value">${hints.teams.match === 'correct' ? 'Yes' : 'No'}</span>
+                        <span class="hint-status">${hints.teams.match === 'correct' ? '✅' : '❌'}</span>
+                    </div>
+                </div>
+            `;
+            
+            hintSection.style.display = 'block';
+            hintSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showRules() {
+            document.getElementById('rules-modal').style.display = 'block';
+        }
+        
+        function closeRules() {
+            document.getElementById('rules-modal').style.display = 'none';
+        }
+        
+        async function resetGame() {
+            if (confirm('Are you sure you want to reset the game?')) {
+                try {
+                    await fetch('/api/reset', { method: 'POST' });
+                    location.reload();
+                } catch (error) {
+                    console.error('Error resetting game:', error);
+                }
+            }
+        }
+        
+        async function showAnswer() {
+            try {
+                const response = await fetch('/api/answer');
+                const result = await response.json();
+                alert(`Today's answer: ${result.answer}`);
+            } catch (error) {
+                console.error('Error getting answer:', error);
+            }
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('rules-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
