@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const moment = require('moment');
 const path = require('path');
 const players = require('./players-database');
@@ -9,6 +10,17 @@ const PORT = process.env.PORT || 3333;
 // Set EJS as template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// Session configuration
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'sensdle-game-secret-key-change-in-production',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    secure: false, // Set to true in production with HTTPS
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
+}));
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -32,9 +44,10 @@ function getRandomPlayer() {
 
 // Initialize or get game state for a session
 function getGameState(sessionId) {
-  if (!gameStates.has(sessionId)) {
+  const gameKey = sessionId + '-' + moment().format('YYYY-MM-DD'); // Include date to reset daily
+  if (!gameStates.has(gameKey)) {
     const targetPlayer = getPlayerOfTheDay();
-    gameStates.set(sessionId, {
+    gameStates.set(gameKey, {
       targetPlayer: targetPlayer,
       currentClue: 0,
       attempts: [],
@@ -43,12 +56,12 @@ function getGameState(sessionId) {
       startTime: new Date()
     });
   }
-  return gameStates.get(sessionId);
+  return gameStates.get(gameKey);
 }
 
 // Main game route
 app.get('/', (req, res) => {
-  const sessionId = req.ip + moment().format('YYYY-MM-DD'); // Simple session based on IP and date
+  const sessionId = req.session.id;
   const gameState = getGameState(sessionId);
   const today = moment().format('MMMM Do, YYYY');
   
@@ -67,7 +80,7 @@ app.get('/', (req, res) => {
 // API endpoint to make a guess
 app.post('/api/guess', (req, res) => {
   const { playerName } = req.body;
-  const sessionId = req.ip + moment().format('YYYY-MM-DD');
+  const sessionId = req.session.id;
   const gameState = getGameState(sessionId);
   
   if (gameState.gameOver) {
@@ -138,7 +151,7 @@ app.post('/api/guess', (req, res) => {
 // API endpoint to get hint/clue comparison
 app.post('/api/hint', (req, res) => {
   const { playerName } = req.body;
-  const sessionId = req.ip + moment().format('YYYY-MM-DD');
+  const sessionId = req.session.id;
   const gameState = getGameState(sessionId);
   
   const guessedPlayer = players.find(p => 
@@ -187,8 +200,9 @@ app.get('/api/answer', (req, res) => {
 
 // Reset game route (for testing)
 app.post('/api/reset', (req, res) => {
-  const sessionId = req.ip + moment().format('YYYY-MM-DD');
-  gameStates.delete(sessionId);
+  const sessionId = req.session.id;
+  const gameKey = sessionId + '-' + moment().format('YYYY-MM-DD');
+  gameStates.delete(gameKey);
   res.json({ success: true, message: 'Game reset!' });
 });
 
