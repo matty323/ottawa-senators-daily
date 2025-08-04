@@ -127,6 +127,23 @@
             </section>
         <% } %>
 
+        <!-- Victory Video Section (hidden by default) -->
+        <% if (gameState.gameWon) { %>
+            <section class="victory-video-section">
+                <div class="victory-video-container">
+                    <iframe 
+                        id="victory-video"
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/nQxzZTp_6Qs?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+        <% } %>
+
         <!-- Footer -->
         <footer class="footer">
             <p>🏒 A new Sensdle puzzle every day! Come back tomorrow for another mystery Senator.</p>
@@ -217,6 +234,10 @@
                         document.getElementById('game-status').innerHTML = 
                             '<div class="status-message win">🎉 You won! Great job!</div>';
                         document.getElementById('guess-section').style.display = 'none';
+                        
+                        // Add victory video
+                        addVictoryVideo();
+                        
                         setTimeout(() => location.reload(), 2000);
                     } else if (result.gameOver) {
                         // Lost the game
@@ -372,6 +393,39 @@
                 alert(`Today's answer: ${result.answer}`);
             } catch (error) {
                 console.error('Error getting answer:', error);
+            }
+        }
+        
+        // Add victory video when player wins
+        function addVictoryVideo() {
+            // Create victory video section if it doesn't exist
+            if (!document.querySelector('.victory-video-section')) {
+                const container = document.querySelector('.container');
+                const footer = document.querySelector('.footer');
+                
+                const victorySection = document.createElement('section');
+                victorySection.className = 'victory-video-section';
+                victorySection.innerHTML = `
+                    <div class="victory-video-container">
+                        <iframe 
+                            id="victory-video"
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/nQxzZTp_6Qs?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `;
+                
+                // Insert before footer
+                container.insertBefore(victorySection, footer);
+                
+                // Scroll to video
+                setTimeout(() => {
+                    victorySection.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
             }
         }
         
