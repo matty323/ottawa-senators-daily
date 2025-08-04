@@ -124,48 +124,6 @@
                     </div>
                 </div>
 
-                <!-- YouTube Videos Section -->
-                <% if (gameState.targetPlayer.videos && gameState.targetPlayer.videos.length > 0) { %>
-                    <div class="videos-section">
-                        <h4>🎥 Watch Highlights</h4>
-                        <% if (gameState.gameWon) { %>
-                            <p class="video-reward">🎉 Congratulations! Here are some great videos of <%= gameState.targetPlayer.name %>:</p>
-                        <% } else { %>
-                            <p class="video-consolation">Check out these highlights of <%= gameState.targetPlayer.name %>:</p>
-                        <% } %>
-                        
-                        <div class="videos-grid">
-                            <% gameState.targetPlayer.videos.forEach((video, index) => { %>
-                                <div class="video-card" data-video-index="<%= index %>">
-                                    <div class="video-thumbnail" onclick="playVideo('<%= video.url %>', '<%= video.title %>')">
-                                        <div class="play-button">▶️</div>
-                                        <div class="video-overlay">
-                                            <h5><%= video.title %></h5>
-                                            <p><%= video.description %></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
-                        
-                        <!-- Video Modal -->
-                        <div id="video-modal" class="video-modal" style="display: none;">
-                            <div class="video-modal-content">
-                                <span class="video-close" onclick="closeVideoModal()">&times;</span>
-                                <div id="video-container">
-                                    <!-- YouTube iframe will be inserted here -->
-                                </div>
-                                <div class="video-info">
-                                    <h4 id="video-title"></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% } else { %>
-                    <div class="no-videos-section">
-                        <p>🎬 No videos available for this player yet. Check back later!</p>
-                    </div>
-                <% } %>
             </section>
         <% } %>
 
@@ -417,62 +375,11 @@
             }
         }
         
-        // Video player functions
-        function playVideo(videoUrl, videoTitle) {
-            const modal = document.getElementById('video-modal');
-            const container = document.getElementById('video-container');
-            const titleElement = document.getElementById('video-title');
-            
-            // Extract YouTube video ID from URL
-            const videoId = extractYouTubeId(videoUrl);
-            if (!videoId) {
-                alert('Invalid YouTube URL');
-                return;
-            }
-            
-            // Create YouTube embed iframe
-            container.innerHTML = `
-                <iframe 
-                    width="100%" 
-                    height="400" 
-                    src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            `;
-            
-            titleElement.textContent = videoTitle;
-            modal.style.display = 'block';
-        }
-        
-        function closeVideoModal() {
-            const modal = document.getElementById('video-modal');
-            const container = document.getElementById('video-container');
-            
-            // Stop video by clearing container
-            container.innerHTML = '';
-            modal.style.display = 'none';
-        }
-        
-        function extractYouTubeId(url) {
-            // Handle various YouTube URL formats
-            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-            const match = url.match(regExp);
-            return (match && match[2].length === 11) ? match[2] : null;
-        }
-        
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const rulesModal = document.getElementById('rules-modal');
-            const videoModal = document.getElementById('video-modal');
-            
-            if (event.target === rulesModal) {
-                rulesModal.style.display = 'none';
-            }
-            
-            if (event.target === videoModal) {
-                closeVideoModal();
+            const modal = document.getElementById('rules-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
         }
     </script>

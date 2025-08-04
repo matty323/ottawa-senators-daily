@@ -7,7 +7,8 @@ set -e  # Exit on any error
 
 # Configuration
 SERVICE_NAME="ottawa-senators-daily"
-REGION="us-east-1"  # Change this to your preferred region
+REGION="us-east-1"  # App Runner is available in us-east-1
+AWS_PROFILE="ca-central-1"  # SSO profile
 CONFIG_FILE="apprunner-config.json"
 
 # Colors for output
@@ -20,6 +21,11 @@ NC='\033[0m' # No Color
 # Helper functions
 log_info() {
     echo -e "${BLUE}ℹ️  $1${NC}"
+}
+
+# AWS CLI helper with profile
+aws_cmd() {
+    aws --profile $AWS_PROFILE --region $REGION "$@"
 }
 
 log_success() {
@@ -45,8 +51,8 @@ check_prerequisites() {
     fi
     
     # Check if AWS is configured
-    if ! aws sts get-caller-identity &> /dev/null; then
-        log_error "AWS CLI is not configured. Run 'aws configure' first."
+    if ! aws_cmd sts get-caller-identity &> /dev/null; then
+        log_error "AWS CLI profile $AWS_PROFILE is not configured or accessible."
         exit 1
     fi
     
@@ -81,15 +87,14 @@ create_service() {
     log_info "Creating App Runner service: $SERVICE_NAME"
     
     # Check if service already exists
-    if aws apprunner describe-service --service-arn $(get_service_arn) &> /dev/null; then
+    if aws apprunner describe-service --service-arn $(get_service_arn) --profile $AWS_PROFILE &> /dev/null; then
         log_warning "Service $SERVICE_NAME already exists. Use 'update' command instead."
         exit 1
     fi
     
     # Create the service
-    SERVICE_ARN=$(aws apprunner create-service \
+    SERVICE_ARN=$(aws_cmd apprunner create-service \
         --cli-input-json file://$CONFIG_FILE \
-        --region $REGION \
         --query 'Service.ServiceArn' \
         --output text)
     

@@ -1,5 +1,5 @@
-// Ottawa Senators Player Database (No Videos, Fixed Photos)
-// Complete roster with working photo URLs
+// Ottawa Senators Player Database with Working Videos and Photos
+// Fixed YouTube videos and NHL official photos
 // Updated: 2025-08-04
 // Total players: 141
 
@@ -25,13 +25,20 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8467950.png",
     "clues": [
       "This G wore number 41 for the Senators",
       "Active with Ottawa: 2010-2020",
       "Draft info: 5th round, 77th overall by Chicago (2001)",
       "Part of the Ottawa Senators franchise history",
       "Played the G position"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=FKDqTOphlRc",
+        "title": "Craig Anderson - Best Saves",
+        "description": "Incredible saves compilation"
+      }
     ]
   },
   {
@@ -55,7 +62,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8475855.png",
     "clues": [
       "This G wore number 31 for the Senators",
       "Active with Ottawa: 2021-Present",
@@ -85,7 +92,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8460221.png",
     "clues": [
       "This G wore number 40 for the Senators",
       "Active with Ottawa: 1999-2004",
@@ -115,7 +122,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 39 for the Senators",
       "Active with Ottawa: 2005-2006",
@@ -145,7 +152,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 1 for the Senators",
       "Active with Ottawa: 2002-2008",
@@ -175,7 +182,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 30 for the Senators",
       "Active with Ottawa: 2020-2022",
@@ -205,7 +212,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 32 for the Senators",
       "Active with Ottawa: 2021-2022",
@@ -235,7 +242,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 33 for the Senators",
       "Active with Ottawa: 2022-2023",
@@ -265,7 +272,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 70 for the Senators",
       "Active with Ottawa: 2023-Present",
@@ -295,7 +302,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 30 for the Senators",
       "Active with Ottawa: 1992-1995",
@@ -325,7 +332,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 1 for the Senators",
       "Active with Ottawa: 1995-1998",
@@ -355,7 +362,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 30 for the Senators",
       "Active with Ottawa: 1996-1999",
@@ -385,7 +392,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 29 for the Senators",
       "Active with Ottawa: 2003-2005",
@@ -415,7 +422,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 35 for the Senators",
       "Active with Ottawa: 2008-2010",
@@ -445,7 +452,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 40 for the Senators",
       "Active with Ottawa: 2009-2011",
@@ -475,7 +482,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 30 for the Senators",
       "Active with Ottawa: 2010-2011",
@@ -505,7 +512,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 40 for the Senators",
       "Active with Ottawa: 2010-2014",
@@ -535,7 +542,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 30 for the Senators",
       "Active with Ottawa: 2014-2017",
@@ -565,7 +572,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 1 for the Senators",
       "Active with Ottawa: 2016-2018",
@@ -595,7 +602,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G wore number 1 for the Senators",
       "Active with Ottawa: 2018-2021",
@@ -629,13 +636,25 @@ const players = [
       "5x All-Star with Ottawa",
       "82-point season in 2015-16"
     ],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8475448.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8475448.png",
     "clues": [
       "Two-time Norris Trophy winner",
       "Set modern records for points by a defenseman",
       "Known for incredible skating and offensive ability",
       "Controversial trade to San Jose in 2018",
       "One of the most dynamic defensemen in NHL history"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=sTKC7J7j7fY",
+        "title": "Erik Karlsson - Best Goals and Plays",
+        "description": "Incredible offensive plays from the blue line"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=F-aTxDkALas",
+        "title": "Erik Karlsson 2017 Highlights",
+        "description": "Season highlights from the Norris Trophy winner"
+      }
     ]
   },
   {
@@ -664,13 +683,20 @@ const players = [
       "1st overall draft pick (1996)",
       "Team record for most games played"
     ],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8458543.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8458543.png",
     "clues": [
       "1st overall pick in 1996",
       "Played entire 19-year career with Ottawa",
       "Franchise record holder for most games played",
       "Stay-at-home defenseman and leader",
       "Number 4 retired by the organization"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=ag3WiIhhCqU",
+        "title": "Chris Phillips Jersey Retirement Ceremony",
+        "description": "Number 4 retirement ceremony"
+      }
     ]
   },
   {
@@ -694,7 +720,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8478469.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8478469.png",
     "clues": [
       "This D wore number 72 for the Senators",
       "Active with Ottawa: 2016-Present",
@@ -724,7 +750,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8482745.png",
     "clues": [
       "This D wore number 85 for the Senators",
       "Active with Ottawa: 2022-Present",
@@ -754,7 +780,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8478528.png",
     "clues": [
       "This D wore number 2 for the Senators",
       "Active with Ottawa: 2020-Present",
@@ -784,7 +810,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 6 for the Senators",
       "Active with Ottawa: 1996-2008",
@@ -814,7 +840,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 24 for the Senators",
       "Active with Ottawa: 2002-2010",
@@ -844,7 +870,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 3 for the Senators",
       "Active with Ottawa: 2012-2017",
@@ -874,7 +900,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 2 for the Senators",
       "Active with Ottawa: 2016-2019",
@@ -904,7 +930,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 5 for the Senators",
       "Active with Ottawa: 2013-2019",
@@ -934,7 +960,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 33 for the Senators",
       "Active with Ottawa: 2015-2018",
@@ -964,7 +990,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 41 for the Senators",
       "Active with Ottawa: 2007-2012",
@@ -994,7 +1020,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 55 for the Senators",
       "Active with Ottawa: 2010-2013",
@@ -1024,7 +1050,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 4 for the Senators",
       "Active with Ottawa: 2007-2009",
@@ -1054,7 +1080,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 7 for the Senators",
       "Active with Ottawa: 2007-2011",
@@ -1084,7 +1110,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 8 for the Senators",
       "Active with Ottawa: 1992-1996",
@@ -1114,7 +1140,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 22 for the Senators",
       "Active with Ottawa: 1992-1999",
@@ -1144,7 +1170,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 3 for the Senators",
       "Active with Ottawa: 1992-1996",
@@ -1174,7 +1200,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 2 for the Senators",
       "Active with Ottawa: 1992-1997",
@@ -1204,7 +1230,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 9 for the Senators",
       "Active with Ottawa: 1998-2002",
@@ -1234,7 +1260,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 2 for the Senators",
       "Active with Ottawa: 2003-2006",
@@ -1264,7 +1290,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 6 for the Senators",
       "Active with Ottawa: 2013-2014",
@@ -1294,7 +1320,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 61 for the Senators",
       "Active with Ottawa: 2013-2015",
@@ -1324,7 +1350,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 2 for the Senators",
       "Active with Ottawa: 2005-2007",
@@ -1357,13 +1383,20 @@ const players = [
       "Captain (2021-Present)",
       "All-Star (2023)"
     ],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8476913.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8476913.png",
     "clues": [
       "Current captain of the Ottawa Senators",
       "Son of Keith Tkachuk, former NHL player",
       "Known for his physical play and leadership",
       "Drafted 4th overall in 2018",
       "Signed long-term contract extension in 2021"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=GVmE2JkTZ_s",
+        "title": "Brady Tkachuk 2023-24 Highlights",
+        "description": "Goals and hits from the Senators captain"
+      }
     ]
   },
   {
@@ -1389,13 +1422,20 @@ const players = [
     "achievements": [
       "Calder Trophy Finalist (2021)"
     ],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8482116.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8482116.png",
     "clues": [
       "First German player drafted in the top 5 by Ottawa",
       "Calder Trophy finalist in rookie season",
       "Versatile player who can play center or wing",
       "Represented Germany at World Championships",
       "Rising star with elite skill set"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=9Ke4480MNeE",
+        "title": "Tim Stutzle 2023-24 Highlights",
+        "description": "Best plays from the young German star"
+      }
     ]
   },
   {
@@ -1419,7 +1459,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8481546.png",
     "clues": [
       "This C wore number 9 for the Senators",
       "Active with Ottawa: 2020-Present",
@@ -1449,7 +1489,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8481678.png",
     "clues": [
       "This C wore number 12 for the Senators",
       "Active with Ottawa: 2021-Present",
@@ -1479,7 +1519,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8482073.png",
     "clues": [
       "This C wore number 63 for the Senators",
       "Active with Ottawa: 2022-Present",
@@ -1509,7 +1549,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8481522.png",
     "clues": [
       "This C wore number 71 for the Senators",
       "Active with Ottawa: 2020-Present",
@@ -1543,13 +1583,20 @@ const players = [
       "92-point season in 2006-07",
       "Part of the 'CASH' line"
     ],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8470638.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8470638.png",
     "clues": [
       "Part of famous 'CASH' line with Alfredsson and Heatley",
       "Career-high 92 points in 2006-07",
       "Skilled playmaker with great vision",
       "Eventually became captain after Alfredsson",
       "Later played for hometown Toronto Maple Leafs"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=dDbEX666G3s",
+        "title": "Jason Spezza Career Highlights",
+        "description": "Best assists and goals compilation"
+      }
     ]
   },
   {
@@ -1573,7 +1620,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8474618.png",
     "clues": [
       "This C wore number 7 for the Senators",
       "Active with Ottawa: 2011-2017",
@@ -1603,7 +1650,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8476429.png",
     "clues": [
       "This C wore number 44 for the Senators",
       "Active with Ottawa: 2012-2020",
@@ -1633,7 +1680,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 95 for the Senators",
       "Active with Ottawa: 2017-2019",
@@ -1667,7 +1714,7 @@ const players = [
       "94-point season in 1998-99",
       "First franchise superstar"
     ],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "First superstar player in franchise history",
       "2nd overall pick in 1992 expansion draft",
@@ -1700,7 +1747,7 @@ const players = [
       "1st overall pick in 1993",
       "Highest drafted player in franchise history"
     ],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "1st overall pick in 1993",
       "Considered one of biggest draft busts in NHL history",
@@ -1730,7 +1777,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 14 for the Senators",
       "Active with Ottawa: 1994-2006",
@@ -1760,7 +1807,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8470120.png",
     "clues": [
       "This C wore number 12 for the Senators",
       "Active with Ottawa: 1999-2011",
@@ -1790,7 +1837,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 10 for the Senators",
       "Active with Ottawa: 2003-2007",
@@ -1820,7 +1867,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 22 for the Senators",
       "Active with Ottawa: 2003-2011",
@@ -1850,7 +1897,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 27 for the Senators",
       "Active with Ottawa: 2014-2017",
@@ -1880,7 +1927,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 15 for the Senators",
       "Active with Ottawa: 2008-2019",
@@ -1910,7 +1957,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 15 for the Senators",
       "Active with Ottawa: 2019-2021",
@@ -1940,7 +1987,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 28 for the Senators",
       "Active with Ottawa: 2011-2013",
@@ -1970,7 +2017,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 16 for the Senators",
       "Active with Ottawa: 1992-1996",
@@ -2000,7 +2047,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 16 for the Senators",
       "Active with Ottawa: 1994-1999",
@@ -2030,7 +2077,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 10 for the Senators",
       "Active with Ottawa: 2000-2009",
@@ -2060,7 +2107,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 19 for the Senators",
       "Active with Ottawa: 2005-2008",
@@ -2090,7 +2137,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 18 for the Senators",
       "Active with Ottawa: 2008-2009",
@@ -2120,7 +2167,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 28 for the Senators",
       "Active with Ottawa: 1997-1998",
@@ -2150,7 +2197,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 21 for the Senators",
       "Active with Ottawa: 1994-1997",
@@ -2180,7 +2227,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 14 for the Senators",
       "Active with Ottawa: 1999-2003",
@@ -2210,7 +2257,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 12 for the Senators",
       "Active with Ottawa: 1992-1993",
@@ -2240,7 +2287,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 32 for the Senators",
       "Active with Ottawa: 1992-1994",
@@ -2270,7 +2317,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C wore number 11 for the Senators",
       "Active with Ottawa: 1992-1995",
@@ -2306,13 +2353,25 @@ const players = [
       "Calder Trophy (1996)",
       "King Clancy Trophy (2012)"
     ],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8458554.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8458554.png",
     "clues": [
       "Franchise legend whose number 11 is retired",
       "Won Calder Trophy as rookie of the year",
       "Captain for 14 seasons",
       "6th round draft pick who became a superstar",
       "Led team to Stanley Cup Final in 2007"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=StTqXEQ2l-Y",
+        "title": "Daniel Alfredsson - NHL Highlights",
+        "description": "Best goals and plays from the Senators legend"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=YVwJWscpmGw",
+        "title": "Daniel Alfredsson Jersey Retirement",
+        "description": "Emotional ceremony retiring #11"
+      }
     ]
   },
   {
@@ -2336,7 +2395,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://cms.nhl.bamgrid.com/images/headshots/current/168x168/8473512.jpg",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8473512.png",
     "clues": [
       "This RW wore number 28 for the Senators",
       "Active with Ottawa: 2022-Present",
@@ -2366,7 +2425,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8479406.png",
     "clues": [
       "This RW wore number 19 for the Senators",
       "Active with Ottawa: 2018-Present",
@@ -2396,7 +2455,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8479337.png",
     "clues": [
       "This RW wore number 12 for the Senators",
       "Active with Ottawa: 2023-Present",
@@ -2426,7 +2485,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8478433.png",
     "clues": [
       "This RW wore number 21 for the Senators",
       "Active with Ottawa: 2021-Present",
@@ -2456,7 +2515,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8468024.png",
     "clues": [
       "This LW wore number 15 for the Senators",
       "Active with Ottawa: 2005-2009",
@@ -2486,7 +2545,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8467419.png",
     "clues": [
       "This RW wore number 18 for the Senators",
       "Active with Ottawa: 1998-2005",
@@ -2516,13 +2575,20 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8477512.png",
     "clues": [
       "This RW wore number 61 for the Senators",
       "Active with Ottawa: 2012-2019",
       "Draft info: 6th round, 178th overall by Ottawa (2010)",
       "Part of the Ottawa Senators franchise history",
       "Played the RW position"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=7yL-KIF_2x4",
+        "title": "Mark Stone Ottawa Highlights",
+        "description": "Two-way excellence in Ottawa"
+      }
     ]
   },
   {
@@ -2546,7 +2612,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 68 for the Senators",
       "Active with Ottawa: 2011-2018",
@@ -2576,13 +2642,20 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/mugs/nhl/20242025/OTT/8470346.png",
     "clues": [
       "This RW wore number 25 for the Senators",
       "Active with Ottawa: 2001-2017",
       "Draft info: 6th round, 161st overall by Ottawa (1998)",
       "Part of the Ottawa Senators franchise history",
       "Played the RW position"
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=jOcmm9HYNUw",
+        "title": "Chris Neil - Heart and Soul",
+        "description": "Tribute to the ultimate Senator"
+      }
     ]
   },
   {
@@ -2606,7 +2679,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 6 for the Senators",
       "Active with Ottawa: 2013-2020",
@@ -2636,7 +2709,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 18 for the Senators",
       "Active with Ottawa: 2015-2019",
@@ -2666,7 +2739,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 16 for the Senators",
       "Active with Ottawa: 2013-2017",
@@ -2696,7 +2769,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 22 for the Senators",
       "Active with Ottawa: 2010-2016",
@@ -2726,7 +2799,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 9 for the Senators",
       "Active with Ottawa: 2007-2016",
@@ -2756,7 +2829,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 20 for the Senators",
       "Active with Ottawa: 2001-2006",
@@ -2786,7 +2859,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 47 for the Senators",
       "Active with Ottawa: 2003-2008",
@@ -2816,7 +2889,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 27 for the Senators",
       "Active with Ottawa: 2009-2011",
@@ -2846,7 +2919,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 37 for the Senators",
       "Active with Ottawa: 2008-2010",
@@ -2876,7 +2949,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 24 for the Senators",
       "Active with Ottawa: 2009-2011",
@@ -2906,7 +2979,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 17 for the Senators",
       "Active with Ottawa: 2007-2009",
@@ -2936,7 +3009,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 16 for the Senators",
       "Active with Ottawa: 2012-2014",
@@ -2966,7 +3039,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 14 for the Senators",
       "Active with Ottawa: 1992-1995",
@@ -2996,7 +3069,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 36 for the Senators",
       "Active with Ottawa: 1992-1996",
@@ -3026,7 +3099,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 12 for the Senators",
       "Active with Ottawa: 1992-1995",
@@ -3056,7 +3129,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 15 for the Senators",
       "Active with Ottawa: 1996-1999",
@@ -3086,7 +3159,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 11 for the Senators",
       "Active with Ottawa: 1998-2001",
@@ -3116,7 +3189,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 26 for the Senators",
       "Active with Ottawa: 1997-2002",
@@ -3146,7 +3219,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 38 for the Senators",
       "Active with Ottawa: 1993-1996",
@@ -3176,7 +3249,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 18 for the Senators",
       "Active with Ottawa: 1992-1994",
@@ -3206,7 +3279,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 23 for the Senators",
       "Active with Ottawa: 1992-1995",
@@ -3236,7 +3309,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 28 for the Senators",
       "Active with Ottawa: 1993-1996",
@@ -3266,7 +3339,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 59 for the Senators",
       "Active with Ottawa: 2018-2021",
@@ -3296,7 +3369,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW wore number 4 for the Senators",
       "Active with Ottawa: 2021-2022",
@@ -3326,7 +3399,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D wore number 48 for the Senators",
       "Active with Ottawa: 2020-2021",
@@ -3356,7 +3429,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 62 for the Senators",
       "Active with Ottawa: 2020-2025",
@@ -3386,7 +3459,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 49 for the Senators",
       "Active with Ottawa: 2018-2019",
@@ -3416,7 +3489,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW wore number 8 for the Senators",
       "Active with Ottawa: 1992-1996",
@@ -3446,7 +3519,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 2000-2002",
       "Draft: 3rd round, 58th overall by Ottawa (1997)",
@@ -3476,7 +3549,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 2006-2008",
       "Draft: 8th round, 232nd overall by Anaheim (1997)",
@@ -3506,7 +3579,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 2007-2009",
       "Draft: 9th round, 291st overall by Ottawa (2003)",
@@ -3536,7 +3609,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D played for Ottawa from 2005-2007",
       "Draft: 4th round, 83rd overall by Los Angeles (1997)",
@@ -3566,7 +3639,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D played for Ottawa from 1997-2001",
       "Draft: 3rd round, 56th overall by NY Islanders (1996)",
@@ -3596,7 +3669,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D played for Ottawa from 2005-2007",
       "Draft: 9th round, 229th overall by Ottawa (1997)",
@@ -3626,7 +3699,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This D played for Ottawa from 2007-2010",
       "Draft: 8th round, 252nd overall by Columbus (2004)",
@@ -3656,7 +3729,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2008-2009",
       "Draft: 4th round, 87th overall by Hartford (1995)",
@@ -3686,7 +3759,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2007-2012",
       "Draft: 1st round, 28th overall by Ottawa (2006)",
@@ -3716,7 +3789,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW played for Ottawa from 2010-2016",
       "Draft: 7th round, 204th overall by Ottawa (2005)",
@@ -3746,7 +3819,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2013-2014",
       "Undrafted player",
@@ -3776,7 +3849,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW played for Ottawa from 2014-2017",
       "Draft: 1st round, 24th overall by Ottawa (2011)",
@@ -3806,7 +3879,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2018-2019",
       "Draft: 4th round, 127th overall by NY Rangers (2004)",
@@ -3836,7 +3909,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW played for Ottawa from 2019-2021",
       "Draft: 3rd round, 75th overall by NY Rangers (2013)",
@@ -3866,7 +3939,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2021-2022",
       "Draft: 3rd round, 71st overall by Florida (2007)",
@@ -3896,7 +3969,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This LW played for Ottawa from 2017-2022",
       "Draft: 4th round, 101st overall by Dallas (2013)",
@@ -3926,7 +3999,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2019-2022",
       "Draft: 6th round, 156th overall by Toronto (2012)",
@@ -3956,7 +4029,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C played for Ottawa from 2020-2021",
       "Draft: 1st round, 26th overall by Buffalo (2008)",
@@ -3986,7 +4059,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C played for Ottawa from 2020-2021",
       "Draft: 2nd round, 51st overall by NY Rangers (2008)",
@@ -4016,7 +4089,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2020-2022",
       "Draft: 1st round, 18th overall by Nashville (2010)",
@@ -4046,7 +4119,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C played for Ottawa from 2018-2021",
       "Draft: 2nd round, 55th overall by San Jose (2012)",
@@ -4076,7 +4149,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This C played for Ottawa from 2018-2021",
       "Draft: 1st round, 11th overall by Ottawa (2016)",
@@ -4106,7 +4179,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This RW played for Ottawa from 2018-2021",
       "Draft: 3rd round, 65th overall by Columbus (2016)",
@@ -4136,7 +4209,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 1992-1993",
       "Draft: 4th round, 67th overall by Pittsburgh (1983)",
@@ -4166,7 +4239,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 1993-1994",
       "Draft: 3rd round, 60th overall by Winnipeg (1985)",
@@ -4196,7 +4269,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 2000-2001",
       "Draft: 4th round, 108th overall by Boston (1998)",
@@ -4226,7 +4299,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 1992-1993",
       "Undrafted player",
@@ -4256,7 +4329,7 @@ const players = [
       "points": null
     },
     "achievements": [],
-    "photo": "https://logos-world.net/wp-content/uploads/2020/10/Ottawa-Senators-Logo.png",
+    "photo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
     "clues": [
       "This G played for Ottawa from 1995-1997",
       "Draft: 2nd round, 23rd overall by New Jersey (1984)",
