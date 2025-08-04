@@ -127,22 +127,7 @@
             </section>
         <% } %>
 
-        <!-- Victory Video Section (hidden by default) -->
-        <% if (gameState.gameWon) { %>
-            <section class="victory-video-section">
-                <div class="victory-video-container">
-                    <iframe 
-                        id="victory-video"
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/nQxzZTp_6Qs?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </section>
-        <% } %>
+        <!-- Victory Video Section (dynamically added when winning) -->
 
         <!-- Footer -->
         <footer class="footer">
@@ -189,6 +174,13 @@
     <script>
         let gameOver = <%= gameState.gameOver ? 'true' : 'false' %>;
         let gameWon = <%= gameState.gameWon ? 'true' : 'false' %>;
+        
+        // Add victory video if page loads with a win
+        document.addEventListener('DOMContentLoaded', function() {
+            if (gameWon) {
+                addVictoryVideo();
+            }
+        });
         
         // Enter key to submit guess
         document.getElementById('player-input')?.addEventListener('keypress', function(e) {
@@ -398,35 +390,45 @@
         
         // Add victory video when player wins
         function addVictoryVideo() {
-            // Create victory video section if it doesn't exist
-            if (!document.querySelector('.victory-video-section')) {
-                const container = document.querySelector('.container');
-                const footer = document.querySelector('.footer');
-                
-                const victorySection = document.createElement('section');
-                victorySection.className = 'victory-video-section';
-                victorySection.innerHTML = `
-                    <div class="victory-video-container">
-                        <iframe 
-                            id="victory-video"
-                            width="560" 
-                            height="315" 
-                            src="https://www.youtube.com/embed/nQxzZTp_6Qs?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                `;
-                
-                // Insert before footer
-                container.insertBefore(victorySection, footer);
-                
-                // Scroll to video
-                setTimeout(() => {
-                    victorySection.scrollIntoView({ behavior: 'smooth' });
-                }, 500);
+            // Check if video section already exists
+            let existingSection = document.querySelector('.victory-video-section');
+            
+            if (existingSection) {
+                // If it exists, just scroll to it and ensure video is playing
+                existingSection.scrollIntoView({ behavior: 'smooth' });
+                return;
             }
+            
+            // Create new victory video section
+            const container = document.querySelector('.container');
+            const footer = document.querySelector('.footer');
+            
+            const victorySection = document.createElement('section');
+            victorySection.className = 'victory-video-section';
+            
+            // Use a unique timestamp to force autoplay to work
+            const timestamp = Date.now();
+            victorySection.innerHTML = `
+                <div class="victory-video-container">
+                    <iframe 
+                        id="victory-video-${timestamp}"
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/nQxzZTp_6Qs?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0&t=${timestamp}" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            `;
+            
+            // Insert before footer
+            container.insertBefore(victorySection, footer);
+            
+            // Scroll to video after a brief delay
+            setTimeout(() => {
+                victorySection.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
         }
         
         // Close modal when clicking outside
